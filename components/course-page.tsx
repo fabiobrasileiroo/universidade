@@ -582,6 +582,96 @@ const coursesData: Record<string, Course> = {
 
     ],
   },
+"2": {
+  id: "2",
+    title: "Linguagens de Programação",
+     description: "Fundamentos de Linguagens de Programação",
+     professor: {
+       name: "Filipe Braida",
+       bio: "Professor",
+       imageUrl: "/felipebraida.jpg?height=200&width=200",
+     },
+     videos: [
+      {
+        id: "1",
+        title: "Aula #01 - Discussão sobre os Critérios para Avaliação de LPs | Linguagens de Programação",
+        videoId: "xfDdxqbkiSQ",
+        completed: false
+      },
+      {
+        id: "2",
+        title: "Aula #02 - Discussão sobre Nomes e Vinculações | Linguagens de Programação",
+        videoId: "sCbRKDqxJZw",
+        completed: false
+      },
+      {
+        id: "3",
+        title: "Aula #03 - Discussão sobre Escopo Estático e Dinâmico | Linguagens de Programação",
+        videoId: "2ZnIanX1P0I",
+        completed: false
+      },
+      {
+        id: "4",
+        title: "Aula #04 - Discussão sobre História das Linguagens de Programação | Linguagens de Programação",
+        videoId: "32sZ82fnKzY",
+        completed: false
+      },
+      {
+        id: "5",
+        title: "Aula #05 - Discussão sobre Tipo de Dados - Parte I | Linguagens de Programação",
+        videoId: "hDRP3LZsIBk",
+        completed: false
+      },
+      {
+        id: "6",
+        title: "Aula #06 - Discussão sobre Tipo de Dados - Parte II | Linguagens de Programação",
+        videoId: "tXFByMlfARY",
+        completed: false
+      },
+      {
+        id: "7",
+        title: "Aula #07 - Discussão sobre Expressões e Sentença de Atribuição | Linguagens de Programação",
+        videoId: "gQRr23V7ze8",
+        completed: false
+      },
+      {
+        id: "8",
+        title: "Aula #08 - Discussão sobre Estruturas de Controle no Nível de Sentença | Linguagens de Programação",
+        videoId: "jK_vpphZn3A",
+        completed: false
+      },
+      {
+        id: "9",
+        title: "Aula #09 - Discussão sobre Subprogramas | Linguagens de Programação",
+        videoId: "SHTw2SuGTHM",
+        completed: false
+      },
+      {
+        id: "10",
+        title: "Aula #10 - Discussão sobre Implementando Subprogramas | Linguagens de Programação",
+        videoId: "K-qvhDJe5n8",
+        completed: false
+      },
+      {
+        id: "11",
+        title: "Aula #11 - Discussão sobre Tipos Abstratos de Dados | Linguagens de Programação",
+        videoId: "fvKcffZexWA",
+        completed: false
+      },
+      {
+        id: "12",
+        title: "Aula #12 - Discussão sobre Suporte a Programação Orientada a Objeto | Linguagens de Programação",
+        videoId: "rCclQcyfaMc",
+        completed: false
+      },
+      {
+        id: "13",
+        title: "Aula #13 - Discussão sobre Escopo Estático e Dinâmico | Linguagens de Programação",
+        videoId: "eukk6HeTpUQ",
+        completed: false
+      }     
+     ],
+   },
 
 }
 

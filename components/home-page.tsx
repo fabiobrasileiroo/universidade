@@ -14,6 +14,14 @@ const courses = [
       { id: "1", title: "Introdução a Circuitos Digitais", videoId: "dQw4w9WgXcQ", completed: false },
     ],
   },
+  {
+    id: "2",
+    title: "Linguagens de Programação - 2021.1",
+    description: "Fundamentos Linguagens de Programação",
+    videos: [
+      
+    ],
+  },
 
 ]
 
