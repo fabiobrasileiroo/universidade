@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
 
   const [clickedId, setClickedId] = useState<string | null>(null);
 
-  const [connections, setConnections] = useState<{ [key: string]: string[] }>({
+  const [connections] = useState<{ [key: string]: string[] }>({
 '1-1': ['2-5'], 
     '1-2': ['2-5'], 
     '1-3': [], 
@@ -69,7 +69,7 @@ const HomePage: React.FC = () => {
   });
 
   const handleClick = (id: string) => {
-    let updatedColors = { ...colors };
+    const updatedColors = { ...colors };
 
     if (clickedId) {
       updatedColors[clickedId] = 'white'; 
