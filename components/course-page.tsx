@@ -582,21 +582,7 @@ const coursesData: Record<string, Course> = {
 
     ],
   },
-  // "2": {
-  //   id: "2",
-  //   title: "Matemática Discreta",
-  //   description: "Fundamentos matemáticos para ciência da computação",
-  //   professor: {
-  //     name: "Dra. Maria Santos",
-  //     bio: "Professora associada especializada em Matemática Discreta e suas aplicações",
-  //     imageUrl: "/placeholder.svg?height=200&width=200",
-  //   },
-  //   videos: [
-  //     { id: "4", title: "Teoria dos Conjuntos", videoId: "dQw4w9WgXcQ", completed: false },
-  //     { id: "5", title: "Lógica Proposicional", videoId: "dQw4w9WgXcQ", completed: false },
-  //     { id: "6", title: "Indução Matemática", videoId: "dQw4w9WgXcQ", completed: false },
-  //   ],
-  // },
+
 }
 
 export function CoursePage({ id }: { id: string }) {
