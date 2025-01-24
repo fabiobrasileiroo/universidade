@@ -31,10 +31,10 @@ const HomePage: React.FC = () => {
   const [clickedId, setClickedId] = useState<string | null>(null);
 
   const [connections] = useState<{ [key: string]: string[] }>({
-'1-1': ['2-5'], 
-    '1-2': ['2-5'], 
+    '1-1': [], 
+    '1-2': [], 
     '1-3': [], 
-    '1-4': ['2-5'],
+    '1-4': [],
     '1-5':[],
     '2-1': ['1-5'], 
     '2-2': ['1-5'], 
