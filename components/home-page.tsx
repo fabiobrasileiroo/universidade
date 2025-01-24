@@ -14,16 +14,6 @@ const courses = [
       { id: "1", title: "Introdução a Circuitos Digitais", videoId: "dQw4w9WgXcQ", completed: false },
     ],
   },
-  {
-    id: "2",
-    title: "Matemática Discreta",
-    description: "Fundamentos matemáticos para ciência da computação",
-    videos: [
-      { id: "4", title: "Teoria dos Conjuntos", videoId: "dQw4w9WgXcQ", completed: false },
-      { id: "5", title: "Lógica Proposicional", videoId: "dQw4w9WgXcQ", completed: false },
-      { id: "6", title: "Indução Matemática", videoId: "dQw4w9WgXcQ", completed: false },
-    ],
-  },
 
 ]
 
