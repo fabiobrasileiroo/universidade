@@ -51,6 +51,7 @@ export function HomePage() {
           </Link>
         ))}
       </div>
+      
     </div>
   )
 }
