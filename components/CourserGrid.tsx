@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useCallback } from "react"
+import { useCallback, useEffect, useState } from "react"
 import ReactFlow, {
   type Node,
   type Edge,
@@ -13,7 +13,7 @@ import ReactFlow, {
   Controls,
 } from "reactflow"
 import "reactflow/dist/style.css"
-import CourseNode from "@/components/CourseNode"
+import CourseNode, { type CourseStatus } from "@/components/CourseNode"
 
 const nodeTypes = {
   course: CourseNode,
@@ -70,10 +70,13 @@ const initialNodes: Node[] = courses.flatMap((semester, semesterIndex) =>
     id: `${semesterIndex + 1}-${courseIndex + 1}`,
     type: "course",
     data: {
+      id: `${semesterIndex + 1}-${courseIndex + 1}`,
       label: course,
       isSelected: false,
       isConnected: false,
       semesterIndex: semesterIndex,
+      status: "default" as CourseStatus,
+      onStatusChange: () => {},
     },
     position: { x: courseIndex * 200, y: semesterIndex * 150 },
   })),
@@ -114,47 +117,99 @@ const initialEdges: Edge[] = [
 ]
 
 export function CourseGrid() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
-  const [edges, setEdges, onEdgesChange] = useEdgesState([])
+    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
+    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges)
+    const [visibleEdges, setVisibleEdges] = useState<Edge[]>([])  // Estado para as arestas visíveis
+  
+    const onConnect = useCallback((params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)), [setEdges])
+  
+    const onNodeClick = useCallback(
+      (event: React.MouseEvent, node: Node) => {
+        const connectedEdges = initialEdges.filter(
+          (edge) => edge.source === node.id || edge.target === node.id
+        )
+  
+        setVisibleEdges(connectedEdges) 
+  
+        setNodes((nds) =>
+          nds.map((n) => ({
+            ...n,
+            data: {
+              ...n.data,
+              isSelected: n.id === node.id,
+              isConnected: connectedEdges.some(
+                (edge) => edge.source === n.id || edge.target === n.id
+              ),
+            },
+          }))
+        )
+      },
+      [setNodes]
+    )
 
-  const onConnect = useCallback((params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)), [setEdges])
+    const handleStatusChange = useCallback((nodeId: string, newStatus: CourseStatus) => {
+        setNodes((nds) =>
+          nds.map((n) => {
+            if (n.id === nodeId) {
+              const updatedNode = {
+                ...n,
+                data: {
+                  ...n.data,
+                  status: newStatus,
+                },
+              }
+              localStorage.setItem(`courseStatus_${nodeId}`, newStatus)
+              return updatedNode
+            }
+            return n
+          })
+        )
+      }, []) 
 
-  const onNodeClick = useCallback(
-    (event: React.MouseEvent, node: Node) => {
-      const connectedEdges = initialEdges.filter((edge) => edge.source === node.id || edge.target === node.id)
+      useEffect(() => {
+        const loadSavedStatuses = () => {
+          const savedNodes = initialNodes.map((node) => {
+            const savedStatus = localStorage.getItem(`courseStatus_${node.id}`)
+            if (savedStatus) {
+              return {
+                ...node,
+                data: {
+                  ...node.data,
+                  status: savedStatus as CourseStatus,
+                },
+              }
+            }
+            return node
+          })
+          setNodes(savedNodes)
+        }
+    
+        loadSavedStatuses()
+      }, []) 
 
-      setNodes((nds) =>
-        nds.map((n) => ({
-          ...n,
-          data: {
-            ...n.data,
-            isSelected: n.id === node.id,
-            isConnected: connectedEdges.some((edge) => edge.source === n.id || edge.target === n.id),
-          },
-        })),
+      const nodesWithStatusChange = nodes.map((node) => ({
+        ...node,
+        data: {
+          ...node.data,
+          onStatusChange: handleStatusChange,
+        },
+      }))
+
+      return (
+        <div className="w-full h-[600px] border border-gray-200 rounded-lg">
+          <ReactFlow
+            nodes={nodesWithStatusChange}
+            edges={visibleEdges}  
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onConnect={onConnect}
+            onNodeClick={onNodeClick}
+            nodeTypes={nodeTypes}
+            fitView
+          >
+            <Background />
+            <Controls />
+          </ReactFlow>
+        </div>
       )
-
-      setEdges(connectedEdges)
-    },
-    [setNodes, setEdges],
-  )
-
-  return (
-    <div className="w-full h-[600px] border border-gray-200 rounded-lg">
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
-        onNodeClick={onNodeClick}
-        nodeTypes={nodeTypes}
-        fitView
-      >
-        <Background />
-        <Controls />
-      </ReactFlow>
-    </div>
-  )
-}
-
+    }
