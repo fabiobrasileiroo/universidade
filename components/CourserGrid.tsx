@@ -118,17 +118,19 @@ const initialEdges: Edge[] = [
 
 export function CourseGrid() {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
-    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges)
-    const [visibleEdges, setVisibleEdges] = useState<Edge[]>([])  // Estado para as arestas visíveis
-  
+    const [, setEdges, onEdgesChange] = useEdgesState(initialEdges)
+    const [visibleEdges, setVisibleEdges] = useState<Edge[]>([]) 
+    
     const onConnect = useCallback((params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)), [setEdges])
   
     const onNodeClick = useCallback(
       (event: React.MouseEvent, node: Node) => {
+        
         const connectedEdges = initialEdges.filter(
           (edge) => edge.source === node.id || edge.target === node.id
         )
   
+    
         setVisibleEdges(connectedEdges) 
   
         setNodes((nds) =>
@@ -146,70 +148,69 @@ export function CourseGrid() {
       },
       [setNodes]
     )
-
+  
     const handleStatusChange = useCallback((nodeId: string, newStatus: CourseStatus) => {
-        setNodes((nds) =>
-          nds.map((n) => {
-            if (n.id === nodeId) {
-              const updatedNode = {
-                ...n,
-                data: {
-                  ...n.data,
-                  status: newStatus,
-                },
-              }
-              localStorage.setItem(`courseStatus_${nodeId}`, newStatus)
-              return updatedNode
+      setNodes((nds) =>
+        nds.map((n) => {
+          if (n.id === nodeId) {
+            const updatedNode = {
+              ...n,
+              data: {
+                ...n.data,
+                status: newStatus,
+              },
             }
-            return n
-          })
-        )
-      }, []) 
-
-      useEffect(() => {
-        const loadSavedStatuses = () => {
-          const savedNodes = initialNodes.map((node) => {
-            const savedStatus = localStorage.getItem(`courseStatus_${node.id}`)
-            if (savedStatus) {
-              return {
-                ...node,
-                data: {
-                  ...node.data,
-                  status: savedStatus as CourseStatus,
-                },
-              }
-            }
-            return node
-          })
-          setNodes(savedNodes)
-        }
-    
-        loadSavedStatuses()
-      }, []) 
-
-      const nodesWithStatusChange = nodes.map((node) => ({
-        ...node,
-        data: {
-          ...node.data,
-          onStatusChange: handleStatusChange,
-        },
-      }))
-
-      return (
-        <div className="w-full h-[600px] border border-gray-200 rounded-lg">
-          <ReactFlow
-            nodes={nodesWithStatusChange}
-            edges={visibleEdges}  
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange}
-            onConnect={onConnect}
-            onNodeClick={onNodeClick}
-            nodeTypes={nodeTypes}
-            fitView
-          >
-            <Background />
-            <Controls />
-          </ReactFlow>
-        </div>
+            localStorage.setItem(`courseStatus_${nodeId}`, newStatus)
+            return updatedNode
+          }
+          return n
+        })
       )
-    }
+    }, [])
+  
+    useEffect(() => {
+      const loadSavedStatuses = () => {
+        const savedNodes = initialNodes.map((node) => {
+          const savedStatus = localStorage.getItem(`courseStatus_${node.id}`)
+          if (savedStatus) {
+            return {
+              ...node,
+              data: {
+                ...node.data,
+                status: savedStatus as CourseStatus,
+              },
+            }
+          }
+          return node
+        })
+        setNodes(savedNodes)
+      }
+  
+      loadSavedStatuses()
+    }, []) 
+  
+    const nodesWithStatusChange = nodes.map((node) => ({
+      ...node,
+      data: {
+        ...node.data,
+        onStatusChange: handleStatusChange,
+      },
+    }))
+  
+    return (
+      <div className="w-full h-[600px] border border-gray-200 rounded-lg">
+        <ReactFlow
+          nodes={nodesWithStatusChange}
+          edges={visibleEdges} 
+          onNodesChange={onNodesChange}
+          onConnect={onConnect}
+          onNodeClick={onNodeClick}
+          nodeTypes={nodeTypes}
+          fitView
+        >
+          <Background />
+          <Controls />
+        </ReactFlow>
+      </div>
+    )
+  }
