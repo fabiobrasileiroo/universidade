@@ -118,7 +118,7 @@ const initialEdges: Edge[] = [
 
 export function CourseGrid() {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
-    const [, setEdges, onEdgesChange] = useEdgesState(initialEdges)
+    const [, setEdges, ] = useEdgesState(initialEdges)
     const [visibleEdges, setVisibleEdges] = useState<Edge[]>([]) 
     
     const onConnect = useCallback((params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)), [setEdges])
