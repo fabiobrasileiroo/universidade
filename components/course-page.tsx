@@ -734,11 +734,10 @@ export function CoursePage({ id }: { id: string }) {
         <div className="lg:col-span-9">
           <div className="space-y-6">
           <Link href="/" passHref>
-          
                 <button className="px-4 py-2 text-white bg-blue-900 rounded-md hover:bg-blue-700 focus:outline-none">
                 <FaArrowLeft />
                 </button>
-              </Link>
+            </Link>
             <div>
               <h1 className="text-3xl font-bold mb-2">{courseData.title}</h1>
               <p className="text-muted-foreground">{courseData.description}</p>
