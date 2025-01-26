@@ -11,7 +11,7 @@ const courses = [
     id: "1",
     title: "Circuitos Digitais",
     description: "Introdução aos conceitos fundamentais de circuitos digitais",
-    videos: [{ id: "1", title: "Introdução a Circuitos Digitais", videoId: "dQw4w9WgXcQ", completed: false }],
+    videos: [],
   },
   {
     id: "2",
