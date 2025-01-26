@@ -12,7 +12,7 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import { coursesData } from "@/data/coursesData";
 
-export function CoursePage({ id }: { id: string }) {
+export async function CoursePage({ id }: { id: string }) {
   const courseData = coursesData[id];
   const [selectedVideo, setSelectedVideo] = useState(courseData.videos[0]);
   const { getProgress } = useCourseProgress();
