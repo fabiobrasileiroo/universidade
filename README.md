@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Universidade
+O projeto é um portal em construção voltado para estudos no curso de Ciência da Computação, inspirado no projeto Universidade Brasileira Livre (UBL)
 
-## Getting Started
+Atualmente, temos disponível a grade curricular do curso da UBL
 
-First, run the development server:
+![image](https://github.com/user-attachments/assets/f668e7ed-f89c-4bfb-b7e7-5b90d9b8261f)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Objetivos futuros
+1. Canal de atividades para cada cadeira, onde pessoas podem contribuir enviando em arquivo .md
+2. Criação de um fórum no site para dúvidas relacionadas a cada disciplina ou aula presente. Claro, contar com pessoas para responder também é um objetivo, rsrs.
+
+### Aulas no Portal
+![image](https://github.com/user-attachments/assets/a260f2fb-0e39-4281-8987-63b231a632e1)
+
+1. Atualmente, o projeto oferece 2 cursos gratuitos, que podem ser acessados e assistidos diretamente no site, sem a necessidade de ir ao YouTube. Isso ajuda a evitar distrações e facilita o foco no conteúdo.
+
+### Obs: 
+
+O site não tem objetivo de cobrar nada para funcionar, estou usando ferramentas gratuitas de hospedagem e nenhum conteúdo presente é de minha propriedade, se trata de um projeto aberto
+
+## Como contribuir?
+
+```git
+git checkout -b feature/adicionar-cursos-embutidos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Realize commits pequenos e com frequência. Isso ajuda a manter o histórico de mudanças limpo e fácil de entender. Cada commit deve ser uma unidade lógica de trabalho.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```git
+git add .
+git commit -m "Adiciona estrutura para exibir cursos com vídeos embutidos"
+git push origin feature/adicionar-cursos-embutidos
+````
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+As mensagens de commit devem ser descritivas e claras, explicando o que foi feito. A convenção recomendada é:
+1. Primeira linha: Resumo curto do que foi feito (máximo 50 caracteres).
+2. Linhas seguintes: Descrição detalhada, se necessário, explicando o motivo da mudança.
 
-## Learn More
+```git
+git commit -m "Adiciona suporte a vídeos embutidos para os cursos"
+```
 
-To learn more about Next.js, take a look at the following resources:
+Sempre que estiver trabalhando em uma branch e for fazer o git pull, utilize a opção --rebase para evitar merges desnecessários. Isso mantém o histórico linear e limpo.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```git
+git pull --rebase origin master
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Para adicionar os cursos do YouTube manualmente na plataforma, sem utilizar a API do YouTube, você pode configurar um processo para embutir os vídeos diretamente em sua aplicação. Vou te mostrar um exemplo básico de como isso poderia ser feito, além de algumas sugestões para organizar o código.
 
-## Deploy on Vercel
+1. Estrutura para Adicionar Cursos Manualmente
+Você pode criar um arquivo de dados ou estrutura para armazenar as informações dos cursos, como título, descrição, e o ID do vídeo do YouTube (para o embed). Vamos supor que você armazene isso em um arquivo de configuração no seu projeto, como um array de objetos.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Exemplo de Código
+Aqui está um exemplo de como você pode adicionar os cursos manualmente no seu projeto:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```Typescript
+  "2": {
+    id: "2" <- Id do curso,
+    title: "Nome Do curso",
+    description: "Descrição do Curso",
+    professor: {
+      name: "Nome do Projeto",
+      bio: "Professor de Matemática Discreta",
+      imageUrl: "/douglasmaioli.jpg?height=200&width=200"
+    },
+    "videos": [
+      {
+        id: "1",
+        title: "Aula #01 - Tabela Verdade dos Conectivos (Parte I de Lógica) | Fundamentos Matemáticos para Computação",
+        videoId: "QE6ruiq632o",
+        completed": false
+      },
+    ]
+  }
+```
+
+No componente ```course-page``` adicione a playlist referente ao curso, prioridade aos cursos que tem linkado na UBL.
+
+
+O projeto é em Next, tendo node instalado e clonado o projeto, você pode mandar o ```npm run dev``` e acessar a localhost:3000 que irá encontrar o projeto rodando em sua máquina
+
+Referências
+https://github.com/Universidade-Livre/ciencia-da-computacao
