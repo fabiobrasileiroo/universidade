@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Universidade
+O projeto se trata de um portal em contrução de estudos voltado para o curso de Ciência da Computação inspirado no projeto Universidade Brasileira Livre(UBL) https://github.com/Universidade-Livre/ciencia-da-computacao
 
-## Getting Started
+No momento, temos a grade disponível do curso da UBL
 
-First, run the development server:
+![image](https://github.com/user-attachments/assets/f668e7ed-f89c-4bfb-b7e7-5b90d9b8261f)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Objetivos futuros
+1. Canal de atividades para cada cadeira, onde pessoas podem contribuir enviando em arquivo .md
+2. Criação de Fórum no site para dúvidas relacionado a cadeira ou aula presente, claro, ter pessoas para responder também é um objetivo rsrs
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Aulas Grátis
+![image](https://github.com/user-attachments/assets/a260f2fb-0e39-4281-8987-63b231a632e1)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Atualmente o projeto tem no site 2 cursos onde você pode acessar e assistir, são cursos grátis que roda no site sem precisar ir ao youtube, isso ajuda nas distrações, essas coisas..
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Obs: 
 
-## Learn More
+O site não tem objetivo de cobrar nada para funcionar, estou usando ferramentas gratuitas de hospedagem 
 
-To learn more about Next.js, take a look at the following resources:
+## Como contribuir?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Bom, você pode adicionar os cursos do youtube na plataforma, atualmente o código não está dos melhores, e como não quero usar a API do youtube, é manual.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+O projeto é em Next, tendo node instalado e clonado o projeto, você pode mandar o ```npm run dev``` e acessar a localhost:3000 que irá encontrar o projeto rodando em sua máquina
