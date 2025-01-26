@@ -20,6 +20,32 @@ O site não tem objetivo de cobrar nada para funcionar, estou usando ferramentas
 
 ## Como contribuir?
 
+```git
+git checkout -b feature/adicionar-cursos-embutidos
+```
+
+Realize commits pequenos e com frequência. Isso ajuda a manter o histórico de mudanças limpo e fácil de entender. Cada commit deve ser uma unidade lógica de trabalho.
+
+```git
+git add .
+git commit -m "Adiciona estrutura para exibir cursos com vídeos embutidos"
+git push origin feature/adicionar-cursos-embutidos
+````
+
+As mensagens de commit devem ser descritivas e claras, explicando o que foi feito. A convenção recomendada é:
+1. Primeira linha: Resumo curto do que foi feito (máximo 50 caracteres).
+2. Linhas seguintes: Descrição detalhada, se necessário, explicando o motivo da mudança.
+
+```git
+git commit -m "Adiciona suporte a vídeos embutidos para os cursos"
+```
+
+Sempre que estiver trabalhando em uma branch e for fazer o git pull, utilize a opção --rebase para evitar merges desnecessários. Isso mantém o histórico linear e limpo.
+
+```git
+git pull --rebase origin main
+```
+
 Para adicionar os cursos do YouTube manualmente na plataforma, sem utilizar a API do YouTube, você pode configurar um processo para embutir os vídeos diretamente em sua aplicação. Vou te mostrar um exemplo básico de como isso poderia ser feito, além de algumas sugestões para organizar o código.
 
 1. Estrutura para Adicionar Cursos Manualmente
