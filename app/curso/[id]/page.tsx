@@ -1,6 +1,13 @@
 import { CoursePage } from "@/components/course-page"
 
-export default function Page({ params }: { params: { id: string } }) {
-  return <CoursePage id={params.id} />
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function Page({ params }: PageProps) {
+  const { id } = await params; 
+  return <CoursePage id={id} />;
 }
 
