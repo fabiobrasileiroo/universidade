@@ -6,8 +6,7 @@ interface PageProps {
   };
 }
 
-export default async function Page({ params }: PageProps) {
-  const resolvedParams = await params; 
-  const { id } = resolvedParams; 
+export default function Page({ params }: PageProps) {
+  const { id } = params; 
   return <CoursePage id={id} />;
 }
