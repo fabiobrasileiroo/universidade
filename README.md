@@ -43,7 +43,7 @@ git commit -m "Adiciona suporte a vídeos embutidos para os cursos"
 Sempre que estiver trabalhando em uma branch e for fazer o git pull, utilize a opção --rebase para evitar merges desnecessários. Isso mantém o histórico linear e limpo.
 
 ```git
-git pull --rebase origin main
+git pull --rebase origin master
 ```
 
 Para adicionar os cursos do YouTube manualmente na plataforma, sem utilizar a API do YouTube, você pode configurar um processo para embutir os vídeos diretamente em sua aplicação. Vou te mostrar um exemplo básico de como isso poderia ser feito, além de algumas sugestões para organizar o código.
