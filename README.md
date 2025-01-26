@@ -12,7 +12,7 @@ No momento, temos a grade disponível do curso da UBL
 ### Aulas Grátis
 ![image](https://github.com/user-attachments/assets/a260f2fb-0e39-4281-8987-63b231a632e1)
 
-1. Atualmente o projeto tem no site 2 cursos onde você pode acessar e assistir, são cursos grátis que roda no site sem precisar ir ao youtube, isso ajuda nas distrações, essas coisas..
+1. Atualmente, o projeto oferece 2 cursos gratuitos, que podem ser acessados e assistidos diretamente no site, sem a necessidade de ir ao YouTube. Isso ajuda a evitar distrações e facilita o foco no conteúdo.
 
 ### Obs: 
 
