@@ -23,3 +23,6 @@ O site não tem objetivo de cobrar nada para funcionar, estou usando ferramentas
 Bom, você pode adicionar os cursos do youtube na plataforma, atualmente o código não está dos melhores, e como não quero usar a API do youtube, é manual.
 
 O projeto é em Next, tendo node instalado e clonado o projeto, você pode mandar o ```npm run dev``` e acessar a localhost:3000 que irá encontrar o projeto rodando em sua máquina
+
+Créditos:
+https://github.com/Universidade-Livre/ciencia-da-computacao
