@@ -1,7 +1,7 @@
 import type { Course } from "@/types/course";
 
 export const coursesData: Record<string, Course> = {
-    "1": {
+    "circuitos-digitais": {
         id: "1",
         title: "Circuitos Digitais",
         description: "Fundamentos de Circuitos Digitais e Sistemas Digitais",
@@ -572,7 +572,7 @@ export const coursesData: Record<string, Course> = {
     
         ],
       },
-      "2": {
+      "matematica-discreta": {
         id: "2",
         title: "Matemática Discreta",
         description: "Fundamentos Matemáticos para Computação",

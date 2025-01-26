@@ -8,13 +8,13 @@ import { CourseGrid } from "@/components/CourserGrid"
 
 const courses = [
   {
-    id: "1",
+    id: "circuitos-digitais",
     title: "Circuitos Digitais",
     description: "Introdução aos conceitos fundamentais de circuitos digitais",
     videos: [],
   },
   {
-    id: "2",
+    id: "matematica-discreta",
     title: "Matemática Discreta",
     description: "Aulas e Provas do Curso de Matemática Discreta voltada para computação",
     videos: [],
