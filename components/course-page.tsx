@@ -9,6 +9,8 @@ import { VideoPlayer } from "@/components/video-player"
 import { VideoList } from "@/components/video-list"
 import { useCourseProgress } from "@/components/course-progress"
 import type { Course } from "@/types/course"
+import Link from "next/link"
+import { FaArrowLeft } from "react-icons/fa"
 
 const coursesData: Record<string, Course> = {
   "1": {
@@ -731,6 +733,12 @@ export function CoursePage({ id }: { id: string }) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="lg:col-span-9">
           <div className="space-y-6">
+          <Link href="/" passHref>
+          
+                <button className="px-4 py-2 text-white bg-blue-900 rounded-md hover:bg-blue-700 focus:outline-none">
+                <FaArrowLeft />
+                </button>
+              </Link>
             <div>
               <h1 className="text-3xl font-bold mb-2">{courseData.title}</h1>
               <p className="text-muted-foreground">{courseData.description}</p>
