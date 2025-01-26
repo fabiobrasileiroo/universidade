@@ -1,5 +1,5 @@
 ## Universidade
-O projeto se trata de um portal em contrução de estudos voltado para o curso de Ciência da Computação inspirado no projeto Universidade Brasileira Livre(UBL) https://github.com/Universidade-Livre/ciencia-da-computacao
+O projeto se trata de um portal em contrução de estudos voltado para o curso de Ciência da Computação inspirado no projeto Universidade Brasileira Livre(UBL)
 
 No momento, temos a grade disponível do curso da UBL
 
