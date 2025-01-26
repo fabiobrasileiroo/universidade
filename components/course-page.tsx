@@ -582,96 +582,138 @@ const coursesData: Record<string, Course> = {
 
     ],
   },
-"2": {
-  id: "2",
-    title: "Linguagens de Programação",
-     description: "Fundamentos de Linguagens de Programação",
-     professor: {
-       name: "Filipe Braida",
-       bio: "Professor",
-       imageUrl: "/felipebraida.jpg?height=200&width=200",
-     },
-     videos: [
+  "2": {
+    id: "3",
+    title: "Matemática Discreta",
+    description: "Fundamentos Matemáticos para Computação",
+    professor: {
+      name: "Douglas Maioli",
+      bio: "Professor de Matemática Discreta",
+      imageUrl: "/douglasmaioli.jpg?height=200&width=200"
+    },
+    "videos": [
       {
-        id: "1",
-        title: "Aula #01 - Discussão sobre os Critérios para Avaliação de LPs | Linguagens de Programação",
-        videoId: "xfDdxqbkiSQ",
-        completed: false
+        "id": "1",
+        "title": "Aula #01 - Tabela Verdade dos Conectivos (Parte I de Lógica) | Fundamentos Matemáticos para Computação",
+        "videoId": "QE6ruiq632o",
+        "completed": false
       },
       {
-        id: "2",
-        title: "Aula #02 - Discussão sobre Nomes e Vinculações | Linguagens de Programação",
-        videoId: "sCbRKDqxJZw",
-        completed: false
+        "id": "2",
+        "title": "Aula #02 - Fórmula/Tautologia/Contrad. (Parte II de Lógica) | Fundamentos Matemáticos para Computação",
+        "videoId": "Tex6tUKEPQA",
+        "completed": false
       },
       {
-        id: "3",
-        title: "Aula #03 - Discussão sobre Escopo Estático e Dinâmico | Linguagens de Programação",
-        videoId: "2ZnIanX1P0I",
-        completed: false
+        "id": "3",
+        "title": "Aula #03 - Equivalências Tautológicas (Parte III de Lógica) | Fundamentos Matemáticos para Computação",
+        "videoId": "FrX2zstHdNg",
+        "completed": false
       },
       {
-        id: "4",
-        title: "Aula #04 - Discussão sobre História das Linguagens de Programação | Linguagens de Programação",
-        videoId: "32sZ82fnKzY",
-        completed: false
+        "id": "4",
+        "title": "Aula #04 - Regras de Inferência (Parte IV de Lógica) | Fundamentos Matemáticos para Computação",
+        "videoId": "U02g0_xvwgM",
+        "completed": false
       },
       {
-        id: "5",
-        title: "Aula #05 - Discussão sobre Tipo de Dados - Parte I | Linguagens de Programação",
-        videoId: "hDRP3LZsIBk",
-        completed: false
+        "id": "5",
+        "title": "Aula #05 - Predicados e Quantificadores (Parte V de Lógica) | Fundamentos Matemáticos para Computação",
+        "videoId": "hyyM1bToHTc",
+        "completed": false
       },
       {
-        id: "6",
-        title: "Aula #06 - Discussão sobre Tipo de Dados - Parte II | Linguagens de Programação",
-        videoId: "tXFByMlfARY",
-        completed: false
+        "id": "6",
+        "title": "Aula #06 - PROLOG (Parte VI de Lógica) | Fundamentos Matemáticos para Computação",
+        "videoId": "s9eO52XpbJo",
+        "completed": false
       },
       {
-        id: "7",
-        title: "Aula #07 - Discussão sobre Expressões e Sentença de Atribuição | Linguagens de Programação",
-        videoId: "gQRr23V7ze8",
-        completed: false
+        "id": "7",
+        "title": "Entendendo Recorrência usando o PROLOG | Fundamentos Matemáticos para Computação",
+        "videoId": "wZFwNZgLFi0",
+        "completed": false
       },
       {
-        id: "8",
-        title: "Aula #08 - Discussão sobre Estruturas de Controle no Nível de Sentença | Linguagens de Programação",
-        videoId: "jK_vpphZn3A",
-        completed: false
+        "id": "8",
+        "title": "Aula #07 - Técnicas de Demonstrações (Parte Demonstração) | Fundamentos Matemáticos para Computação",
+        "videoId": "dqTqguWTC8I",
+        "completed": false
       },
       {
-        id: "9",
-        title: "Aula #09 - Discussão sobre Subprogramas | Linguagens de Programação",
-        videoId: "SHTw2SuGTHM",
-        completed: false
+        "id": "9",
+        "title": "Aula #08 - Princípio da Indução Finita (Parte Demonstração) | Fundamentos Matemáticos para Computação",
+        "videoId": "7kvOH98Yf5s",
+        "completed": false
       },
       {
-        id: "10",
-        title: "Aula #10 - Discussão sobre Implementando Subprogramas | Linguagens de Programação",
-        videoId: "K-qvhDJe5n8",
-        completed: false
+        "id": "10",
+        "title": "Aula #09 - Tripla de Hoare - Axioma de Atribuição - Regra do Condicional (Demonstração de Correção) | Fundamentos Matemáticos para Computação",
+        "videoId": "nPJTeAIFVvE",
+        "completed": false
       },
       {
-        id: "11",
-        title: "Aula #11 - Discussão sobre Tipos Abstratos de Dados | Linguagens de Programação",
-        videoId: "fvKcffZexWA",
-        completed: false
+        "id": "11",
+        "title": "Aula #10 - Regra do Laço (Demonstração de Correção) | Fundamentos Matemáticos para Computação",
+        "videoId": "YiqjJC538I4",
+        "completed": false
       },
       {
-        id: "12",
-        title: "Aula #12 - Discussão sobre Suporte a Programação Orientada a Objeto | Linguagens de Programação",
-        videoId: "rCclQcyfaMc",
-        completed: false
+        "id": "12",
+        "title": "Aula #11 - Definições Recorrentes (Recursividade) | Fundamentos Matemáticos para Computação",
+        "videoId": "oG8j0kCvXb0",
+        "completed": false
       },
       {
-        id: "13",
-        title: "Aula #13 - Discussão sobre Escopo Estático e Dinâmico | Linguagens de Programação",
-        videoId: "eukk6HeTpUQ",
-        completed: false
-      }     
-     ],
-   },
+        "id": "13",
+        "title": "Aula #12 - Como encontrar a Fórmula Fechada (Recursividade) | Fundamentos Matemáticos para Computação",
+        "videoId": "vF8TswpWuLQ",
+        "completed": false
+      },
+      {
+        "id": "14",
+        "title": "Aula Extra - Dividir para Conquistar (Recursividade) | Fundamentos Matemáticos para Computação",
+        "videoId": "nq0UHzXBe5w",
+        "completed": false
+      },
+      {
+        "id": "15",
+        "title": "Aula #13 - Relações Binárias | Fundamentos Matemáticos para Computação",
+        "videoId": "tKHpu7-4K-o",
+        "completed": false
+      },
+      {
+        "id": "16",
+        "title": "Aula #14 - Funções | Fundamentos Matemáticos para Computação",
+        "videoId": "wvOr_gVa6GA",
+        "completed": false
+      },
+      {
+        "id": "17",
+        "title": "Aula #15 - Análise de Algoritmos - Ordem de Grandeza | Fundamentos Matemáticos para Computação",
+        "videoId": "k5N9E5HNUk0",
+        "completed": false
+      },
+      {
+        "id": "18",
+        "title": "Aula #16 - Introdução à Matrizes (Parte I de Matrizes) | Fundamentos Matemáticos para Computação",
+        "videoId": "jTEarS1mHd4",
+        "completed": false
+      },
+      {
+        "id": "19",
+        "title": "Aula #17 - Operações de Matrizes (Parte II de Matrizes) | Fundamentos Matemáticos para Computação",
+        "videoId": "gYdOA4chMPA",
+        "completed": false
+      },
+      {
+        "id": "20",
+        "title": "Aula #18 - Matrizes Booleanas (Parte III de Matrizes) | Fundamentos Matemáticos para Computação",
+        "videoId": "k8_dpEj8uBs",
+        "completed": false
+      }
+    ]
+  }
 
 }
 

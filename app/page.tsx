@@ -15,8 +15,8 @@ const courses = [
   },
   {
     id: "2",
-    title: "Linguagens de Programação - 2021.1",
-    description: "Fundamentos Linguagens de Programação",
+    title: "Matemática Discreta",
+    description: "Aulas e Provas do Curso de Matemática Discreta voltada para computação",
     videos: [],
   },
 ]
