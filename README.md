@@ -9,7 +9,7 @@ Atualmente, temos disponível a grade curricular do curso da UBL
 1. Canal de atividades para cada cadeira, onde pessoas podem contribuir enviando em arquivo .md
 2. Criação de um fórum no site para dúvidas relacionadas a cada disciplina ou aula presente. Claro, contar com pessoas para responder também é um objetivo, rsrs.
 
-### Aulas Grátis
+### Aulas no Portal
 ![image](https://github.com/user-attachments/assets/a260f2fb-0e39-4281-8987-63b231a632e1)
 
 1. Atualmente, o projeto oferece 2 cursos gratuitos, que podem ser acessados e assistidos diretamente no site, sem a necessidade de ir ao YouTube. Isso ajuda a evitar distrações e facilita o foco no conteúdo.
