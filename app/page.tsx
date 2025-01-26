@@ -119,7 +119,9 @@ export default function HomePage() {
         </Card>
       </section>
 
-
+      <footer className="text-center text-sm text-muted-foreground mt-12">
+      <p>Este site está sendo criado por <strong>@patinhotech, vulgo Marlon Jerold</strong></p>
+      </footer>
 
 
     </div>
