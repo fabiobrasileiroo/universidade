@@ -16,7 +16,7 @@ No momento, temos a grade disponível do curso da UBL
 
 ### Obs: 
 
-O site não tem objetivo de cobrar nada para funcionar, estou usando ferramentas gratuitas de hospedagem 
+O site não tem objetivo de cobrar nada para funcionar, estou usando ferramentas gratuitas de hospedagem e nenhum conteúdo presente é de minha propriedade, se trata de um projeto aberto
 
 ## Como contribuir?
 
