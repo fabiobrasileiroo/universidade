@@ -45,6 +45,38 @@ export default function HomePage() {
         </div>
       </header>
 
+      <section>
+        <h2 className="text-3xl font-bold mb-6">Grade Curricular</h2>
+        <h3 className="text-xl font-semibold mb-4">
+          Grade do curso de Ciência da Computação da Universidade Brasileira Livre (UBL)
+        </h3>
+        <CourseGrid />
+      </section>
+
+      <section className="mt-16 mb-12">
+        <h2 className="text-3xl font-bold mb-6">Cursos Disponíveis</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {courses.map((course) => (
+            <Link href={`/curso/${course.id}`} key={course.id}>
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle>{course.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <Progress value={getProgress(course.id, course.videos)} />
+                    <p className="text-sm text-muted-foreground">
+                      {Math.round(getProgress(course.id, course.videos))}% concluído
+                    </p>
+                    <p className="text-sm">{course.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="mb-16">
         <h2 className="text-3xl font-bold mb-6">Sobre o Projeto</h2>
         <Card>
@@ -87,37 +119,9 @@ export default function HomePage() {
         </Card>
       </section>
 
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-6">Cursos Disponíveis</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {courses.map((course) => (
-            <Link href={`/curso/${course.id}`} key={course.id}>
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle>{course.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <Progress value={getProgress(course.id, course.videos)} />
-                    <p className="text-sm text-muted-foreground">
-                      {Math.round(getProgress(course.id, course.videos))}% concluído
-                    </p>
-                    <p className="text-sm">{course.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </section>
 
-      <section>
-        <h2 className="text-3xl font-bold mb-6">Grade Curricular</h2>
-        <h3 className="text-xl font-semibold mb-4">
-          Grade do curso de Ciência da Computação da Universidade Brasileira Livre (UBL)
-        </h3>
-        <CourseGrid />
-      </section>
+
+
     </div>
   )
 }
