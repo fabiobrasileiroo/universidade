@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -16,6 +16,13 @@ export function CoursePage({ id }: { id: string }) {
   const courseData = coursesData[id];
   const [selectedVideo, setSelectedVideo] = useState(courseData.videos[0]);
   const { getProgress } = useCourseProgress();
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    if (courseData) {
+      setProgress(getProgress(courseData.id, courseData.videos));
+    }
+  }, [courseData, getProgress]);
 
   if (!courseData) {
     return <div>Curso não encontrado</div>;
@@ -59,9 +66,9 @@ export function CoursePage({ id }: { id: string }) {
             <CardHeader>
               <CardTitle className="text-lg">Aulas</CardTitle>
               <div className="space-y-2">
-                <Progress value={getProgress(courseData.id, courseData.videos)} />
+                <Progress value={progress} />
                 <p className="text-sm text-muted-foreground">
-                  {Math.round(getProgress(courseData.id, courseData.videos))}% concluído
+                  {Math.round(progress)}% concluído
                 </p>
               </div>
             </CardHeader>

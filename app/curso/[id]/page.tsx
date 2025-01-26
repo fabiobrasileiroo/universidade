@@ -7,6 +7,6 @@ interface PageProps {
 }
 
 export default function Page({ params }: PageProps) {
-  const { id } = params; 
+  const { id } = params;
   return <CoursePage id={id} />;
 }
