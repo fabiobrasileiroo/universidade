@@ -54,5 +54,5 @@ No componente ```course-page``` adicione a playlist referente ao curso, priorida
 
 O projeto é em Next, tendo node instalado e clonado o projeto, você pode mandar o ```npm run dev``` e acessar a localhost:3000 que irá encontrar o projeto rodando em sua máquina
 
-Créditos:
+Referências
 https://github.com/Universidade-Livre/ciencia-da-computacao
