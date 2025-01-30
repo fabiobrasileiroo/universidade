@@ -14,19 +14,18 @@ import { coursesData } from "@/data/coursesData";
 
 export function CoursePage({ id }: { id: string }) {
   const courseData = coursesData[id];
+
+  if (!courseData) {
+    return <div>Curso não encontrado</div>;
+  }
+
   const [selectedVideo, setSelectedVideo] = useState(courseData.videos[0]);
   const { getProgress } = useCourseProgress();
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    if (courseData) {
-      setProgress(getProgress(courseData.id, courseData.videos));
-    }
+    setProgress(getProgress(courseData.id, courseData.videos));
   }, [courseData, getProgress]);
-
-  if (!courseData) {
-    return <div>Curso não encontrado</div>;
-  }
 
   return (
     <div className="container mx-auto py-6 max-w-[1400px]">
