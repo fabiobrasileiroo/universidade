@@ -227,18 +227,19 @@ export default function HomePage() {
       </section>
 
       <section className="mb-16">
-    <h2 className="text-3xl font-bold mb-6">Meus Cursos em Andamento</h2>
-    <div className="space-y-4">
-      {selectedCourses.map((course, index) => (
-        <Card key={index}>
-          <CardContent className="p-4 flex justify-between items-center">
-            <div>
-              <h3 className="font-semibold">{course.name}</h3>
-              <p className="text-sm text-muted-foreground">
-                Meta: {course.daysCompleted} / {course.daysGoal} dias
-              </p>
-            </div>
-            <Progress value={(course.daysCompleted / course.daysGoal) * 100} className="w-1/3" />
+  <h2 className="text-3xl font-bold mb-6">Meus Cursos em Andamento</h2>
+  <div className="space-y-4">
+    {selectedCourses.map((course, index) => (
+      <Card key={index}>
+        <CardContent className="p-4">
+          <div>
+            <h3 className="font-semibold">{course.name}</h3>
+            <p className="text-sm text-muted-foreground">
+              Meta: {course.daysCompleted} / {course.daysGoal} dias
+            </p>
+            <Progress value={(course.daysCompleted / course.daysGoal) * 100} className="w-full mt-2" />
+          </div>
+          <div className="flex justify-between items-center mt-4">
             {editingIndex === index ? (
               <div className="flex items-center space-x-2">
                 <Input
@@ -263,11 +264,12 @@ export default function HomePage() {
                 </Button>
               </div>
             )}
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </section>
+          </div>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</section>
 
       {filteredCourses.length > 0 && (
         <section className="mb-16">
