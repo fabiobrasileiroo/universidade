@@ -14,18 +14,19 @@ import { coursesData } from "@/data/coursesData";
 
 export function CoursePage({ id }: { id: string }) {
   const courseData = coursesData[id];
-
-  if (!courseData) {
-    return <div>Curso não encontrado</div>;
-  }
-
-  const [selectedVideo, setSelectedVideo] = useState(courseData.videos[0]);
+  const [selectedVideo, setSelectedVideo] = useState(courseData?.videos[0] || null);
   const { getProgress } = useCourseProgress();
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    setProgress(getProgress(courseData.id, courseData.videos));
+    if (courseData) {
+      setProgress(getProgress(courseData.id, courseData.videos));
+    }
   }, [courseData, getProgress]);
+
+  if (!courseData) {
+    return <div>Curso não encontrado</div>;
+  }
 
   return (
     <div className="container mx-auto py-6 max-w-[1400px]">
@@ -41,7 +42,7 @@ export function CoursePage({ id }: { id: string }) {
               <h1 className="text-3xl font-bold mb-2">{courseData.title}</h1>
               <p className="text-muted-foreground">{courseData.description}</p>
             </div>
-            <VideoPlayer videoId={selectedVideo.videoId} />
+            <VideoPlayer videoId={selectedVideo?.videoId} />
             <Card>
               <CardHeader>
                 <CardTitle>Sobre o Professor</CardTitle>
